@@ -1,7 +1,7 @@
 
 
-const BlogCart = ({ blog }) => {
-    const { title, photo, shortDescription, catageroy } = blog || {}
+const AllBlogcCart = ({allBlog}) => {
+    const { title, photo, shortDescription, catageroy } = allBlog || {}
     return (
         <div className="relative flex max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="">
@@ -29,7 +29,7 @@ const BlogCart = ({ blog }) => {
                 <button className="btn btn-active btn-secondary ">Wislist</button>
             </div>
         </div>
-    )
+    );
 };
 
-export default BlogCart;
+export default AllBlogcCart;
