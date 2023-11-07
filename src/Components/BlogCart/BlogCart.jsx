@@ -1,7 +1,18 @@
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 
 const BlogCart = ({ blog }) => {
-    const { title, photo, shortDescription, catageroy } = blog || {}
+    const {_id, title, photo, shortDescription, catageroy } = blog || {}
+    const handeToAddCart = (p) => {
+        axios.post("http://localhost:5000/api/v1/wislist", p)
+            .then(data => {
+                if (data.data.insertedId) {
+                    toast.success("Add To Wishlist Sucessfully")
+                }
+            })
+    }
     return (
         <div className="relative flex max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="">
@@ -25,8 +36,10 @@ const BlogCart = ({ blog }) => {
                 </p>
             </div>
             <div className="flex justify-between px-2 pb-4">
-                <button className="btn btn-active btn-secondary ">Details</button>
-                <button className="btn btn-active btn-secondary ">Wislist</button>
+            <Link to={`/details/${_id}`}>
+                    <button className="btn btn-active btn-secondary ">Details</button>
+                </Link>
+                <button onClick={() => handeToAddCart(blog)}className="btn btn-active btn-secondary ">Wislist</button>
             </div>
         </div>
     )
