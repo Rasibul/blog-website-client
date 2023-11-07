@@ -1,7 +1,7 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import AllBlogcCart from "../../Components/AllBlogCart/AllBlogcCart";
 import { FaSearch } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 
 const AllBlog = () => {
