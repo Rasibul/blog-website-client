@@ -32,9 +32,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 navigate(location?.state ? location.state : "/");
-
             })
-            .catch(error => console.log(error))
     }
     return (
         <div className="hero min-h-screen bg-purple-200">
