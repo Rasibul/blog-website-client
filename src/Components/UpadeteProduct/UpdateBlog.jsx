@@ -1,24 +1,25 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const UpdateBlog = () => {
     const blogs = useLoaderData()
-    const {_id, title, photo, shortDescription,longDescription, catageroy } = blogs || {}
-    const handelUpdateBlog = e =>{
+    const { _id, title, photo, shortDescription, longDescription, catageroy } = blogs || {}
+    const handelUpdateBlog = e => {
         const form = e.target
         const title = form.title.value
         const catageroy = form.catageroy.value
         const shortDescription = form.shortDescription.value
         const longDescription = form.longDescription.value
         const photo = form.photo.value
-        const updateBlog = {title,catageroy,shortDescription,longDescription,photo}
+        const updateBlog = { title, catageroy, shortDescription, longDescription, photo }
         console.log(updateBlog)
 
         axios.put(`http://localhost:5000/api/v1/all-blogs/${_id}`, updateBlog)
             .then(data => {
                 if (data.data.modifiedCount > 0) {
                     toast.success("Update Blog Sucessfully")
+                    form.reset()
                 }
             })
             .catch(err => {
@@ -77,7 +78,7 @@ const UpdateBlog = () => {
                         <input type="text" name="photo" defaultValue={photo} placeholder="Photo Url" className="input input-bordered w-full" />
                     </label>
                 </div>
-                <input type="submit" className=" px-4 py-4 rounded btn-block bg-blue-600 text-white" value="Add Product" />
+                    <input type="submit" className=" px-4 py-4 rounded btn-block bg-blue-600 text-white" value="Update Blog" />
             </form>
         </div>
     );

@@ -10,12 +10,14 @@ import Register from "../Pages/Register/Register";
 import BlogDetails from "../Pages/BlogDetails/BlogDetails";
 import UpdateBlog from "../Components/UpadeteProduct/UpdateBlog";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "",
         element: <MainLayOut></MainLayOut>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "",

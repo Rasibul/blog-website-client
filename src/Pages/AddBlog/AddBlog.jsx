@@ -79,7 +79,7 @@ const AddBlog = () => {
                         <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered w-full" />
                     </label>
                 </div>
-                <input type="submit" className=" px-4 py-4 rounded btn-block bg-blue-600 text-white" value="Add Product" />
+                <input type="submit" className=" px-4 py-4 rounded btn-block bg-blue-600 text-white" value="Add Blog" />
             </form>
         </div>
     );
