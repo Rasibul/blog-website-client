@@ -1,8 +1,10 @@
 import axios from "axios";
 import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 
 const AddBlog = () => {
+    const {user} = useAuth()
     const handelFromItem = e => {
         e.preventDefault()
         const form = e.target
@@ -11,9 +13,8 @@ const AddBlog = () => {
         const shortDescription = form.shortDescription.value
         const longDescription = form.longDescription.value
         const photo = form.photo.value
-        const addBlog = {title,catageroy,shortDescription,longDescription,photo,"date":new Date(Date.now())}
-        // console.log(addBlog)
-
+        const email = user.email
+        const addBlog = {title,catageroy,shortDescription,longDescription,photo,email,"date":new Date(Date.now())}
         axios.post("http://localhost:5000/api/v1/all-blogs",addBlog)
         .then(data =>{
             if(data.data.insertedId){

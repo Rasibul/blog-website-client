@@ -12,9 +12,7 @@ const Login = () => {
         e.preventDefault()
         const password = e.target.password.value
         const email = e.target.email.value
-        // console.log(email, password)
-
-
+    
 
         // validation
         if (password.length < 6) {
