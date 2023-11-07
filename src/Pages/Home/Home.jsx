@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import BlogCart from "../../Components/BlogCart/BlogCart";
 import Newletter from "../../Components/Newletter";
+import Testimonial from "../../Components/Testimonial/Testimonial";
 
 const Home = () => {
   const blogs = useLoaderData()
@@ -18,6 +19,7 @@ const Home = () => {
 
       </div>
       <Newletter></Newletter>
+      <Testimonial></Testimonial>
     </>
   );
 };
