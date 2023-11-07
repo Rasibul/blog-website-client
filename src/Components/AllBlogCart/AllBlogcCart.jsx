@@ -10,11 +10,7 @@ const AllBlogcCart = ({ allBlog }) => {
             .then(data => {
                 if (data.data.insertedId) {
                     toast.success("Add To Wishlist Sucessfully")
-
                 }
-            })
-            .catch(err => {
-                console.log(err)
             })
     }
     return (

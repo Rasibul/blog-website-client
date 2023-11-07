@@ -12,7 +12,7 @@ const Login = () => {
         e.preventDefault()
         const password = e.target.password.value
         const email = e.target.email.value
-        console.log(email, password)
+        // console.log(email, password)
 
 
 
@@ -33,7 +33,7 @@ const Login = () => {
         signIn(email, password)
             .then(res => {
                 console.log(res.user)
-                navigate(location?.state ? location.state : "");
+                navigate(location?.state ? location.state : "/");
 
             })
             .catch(error => console.log(error))

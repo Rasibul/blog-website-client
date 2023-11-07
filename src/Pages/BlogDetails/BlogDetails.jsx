@@ -12,13 +12,15 @@ const BlogDetails = () => {
                     Title:{blogDetails.title}
                 </span>
                 <h2 className=" text-md font-bold">{blogDetails.shortDescription}</h2>
-                <span className="sm:text-purple-600 text-center font-bold mb-2 text-6xl">Explain Our Blog:</span>
+                <span className="text-purple-600 text-center font-bold mb-2 sm:text-6xl">Explain Our Blog:</span>
                 <h2 className=" text-md font-bold">
                     {blogDetails.longDescription}</h2>
             </div>
-            <Link to={`/updateBlog/${blogDetails._id}`}>
-                <button className="btn btn-active btn-secondary ">Update Blog</button>
-            </Link>
+            <div className="flex justify-center items-center">
+                <Link to={`/updateBlog/${blogDetails._id}`}>
+                    <button className="btn btn-secondary">Update Blog</button>
+                </Link>
+            </div>
         </div>
     );
 };
