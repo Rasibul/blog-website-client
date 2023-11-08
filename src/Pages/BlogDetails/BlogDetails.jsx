@@ -1,9 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 
 const BlogDetails = () => {
     const blogDetails = useLoaderData()
-    // console.log(blogDetails)
+    const {user} = useAuth()
+    // const userEmail = user.email
+    
     return (
         <div className="card card-compact  shadow-xl">
             <img src={blogDetails.photo} alt="Shoes" />
@@ -16,10 +19,16 @@ const BlogDetails = () => {
                 <h2 className=" text-md font-bold">
                     {blogDetails.longDescription}</h2>
             </div>
-            <div className="flex justify-center items-center">
-                <Link to={`/updateBlog/${blogDetails._id}`}>
-                    <button className="btn btn-secondary">Update Blog</button>
-                </Link>
+            <div>
+                {user.email === blogDetails.email ? (
+                    <div className="flex justify-center items-center">
+                    <Link to={`/updateBlog/${blogDetails._id}`}>
+                        <button className="btn btn-secondary">Update Blog</button>
+                    </Link>
+                </div>
+                ):(
+                    <div></div>
+                )}
             </div>
         </div>
     );

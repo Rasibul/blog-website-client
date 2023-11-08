@@ -8,6 +8,8 @@ import { useState } from "react";
 const AllBlog = () => {
     const allBlogs = useLoaderData()
     const [searchTerm, setSearchTerm] = useState('')
+    const [catageroy,setCatageroy] = useState()
+    const catageroies = ['Mindfulness','Technology','Cooking','Finance','Productivity','Travel']
     return (
         <div>
             <h2 className="text-center text-base sm:text-3xl font-bold py-5">All Blogs Here</h2>
@@ -27,14 +29,15 @@ const AllBlog = () => {
                     <div className="text-gray-800">
                         <h2 className="text-xl font-bold">Chose Your Catageroy</h2>
                         <label  className="sr-only">My field</label>
-                        <select className="appearance-none  border-solid border-2 border-bla-500 py-1 px-2" name="whatever" id="frm-whatever">
-                            <option value="">Please choose&hellip;</option>
+                        <select className="appearance-none  border-solid border-2 border-bla-500 py-1 px-2" name="whatever" onChange={(e) => setCatageroy(e.target.value)}>
+                            {/* <option value="">Please choose&hellip;</option>
                             <option value="1">Mindfulness</option>
                             <option value="2">Technology</option>
                             <option value="3">Cooking</option>
                             <option value="3">Finance</option>
                             <option value="3">Productivity</option>
-                            <option value="3">Travel</option>
+                            <option value="3">Travel</option> */}
+                            {catageroies.map((op)=><option key={op.id}>{op}</option>)}
                         </select>
                     </div>
                 </fieldset>
