@@ -14,7 +14,9 @@ const AddBlog = () => {
         const longDescription = form.longDescription.value
         const photo = form.photo.value
         const email = user.email
-        const addBlog = {title,catageroy,shortDescription,longDescription,photo,email,"date":new Date(Date.now())}
+        const displayName = user.displayName
+        const photoURL = user.photoURL
+        const addBlog = {title,catageroy,shortDescription,longDescription,photo,email, displayName,photoURL,"date":new Date(Date.now())}
         axios.post("http://localhost:5000/api/v1/all-blogs",addBlog)
         .then(data =>{
             if(data.data.insertedId){
