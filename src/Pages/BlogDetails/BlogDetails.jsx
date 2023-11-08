@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 const BlogDetails = () => {
     const blogDetails = useLoaderData()
     const [data, setData] = useState([])
-    console.log(data)
     const { user } = useAuth()
     const handelComment = e => {
         e.preventDefault()

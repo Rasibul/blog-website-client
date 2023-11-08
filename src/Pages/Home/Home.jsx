@@ -25,10 +25,10 @@ const Home = () => {
   if (isLoading) {
     return (<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>)
   }
-  let sortedBlog = data.sort((a, b) => new Date(b.date - new Date(a.date)))
-  let recentBlog = sortedBlog.slice(0, 6)
+  const sortedBlog = data.sort((a, b) => new Date(b.date) - new Date(a.date))
+  const recentBlog = sortedBlog.slice(0, 6)
 
-  console.log(data)
+  // console.log(data)
   return (
     <>
       <motion.div initial={{ opacity: 0, y: -50 }}

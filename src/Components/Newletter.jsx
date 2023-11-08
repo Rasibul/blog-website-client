@@ -5,7 +5,6 @@ const Newletter = () => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value
-        console.log(email)
         if(email){
             toast.success('Thank you for subscribing to our newsletter')
             form.reset()

@@ -11,10 +11,10 @@ const SocialLogin = () => {
 
     const handelGoogleLogin = (media) => {
         media()
-        .then((data) => {
+        .then(() => {
             toast.success('User loggedin successfully');
             navigate("/")
-            console.log(data)
+            // console.log(data)
         })
         .catch(error => console.log(error))
     }
