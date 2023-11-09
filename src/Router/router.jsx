@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <Home></Home>,
-                // loader: () => fetch('http://localhost:5000/api/v1/all-blogs')
+                // loader: () => fetch('https://blog-server-store.vercel.app/api/v1/all-blogs')
             },
             {
                 path: "addblog",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "allblog",
                 element: <AllBlog></AllBlog>,
-                loader: () => fetch('http://localhost:5000/api/v1/all-blogs')
+                loader: () => fetch('https://blog-server-store.vercel.app/api/v1/all-blogs')
             },
             {
                 path: "featureblogs",
@@ -42,19 +42,19 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <WishList></WishList>
                 </PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/api/v1/wislist')
+                loader: () => fetch('https://blog-server-store.vercel.app/api/v1/wislist')
             },
             {
                 path: "details/:id",
                 element: <PrivateRoute>
                     <BlogDetails></BlogDetails>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-blogs/${params.id}`)
+                loader: ({ params }) => fetch(`https://blog-server-store.vercel.app/api/v1/all-blogs/${params.id}`)
             },
             {
                 path: "updateBlog/:id",
                 element: <UpdateBlog></UpdateBlog>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-blogs/${params.id}`)
+                loader: ({ params }) => fetch(`https://blog-server-store.vercel.app/api/v1/all-blogs/${params.id}`)
             }
         ]
     },

@@ -6,7 +6,7 @@ const FeatureBlogs = () => {
     const { user } = useAuth();
     const [tabels, setTabels] = useState([]);
 
-    const url = `http://localhost:5000/api/v1/all-blogs?email=${user?.email}`;
+    const url = `https://blog-server-store.vercel.app/api/v1/all-blogs?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

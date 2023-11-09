@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const WishList = () => {
     const allWishList = useLoaderData()
     const handelDelete= _id => {
-        axios.delete(`http://localhost:5000/api/v1/wishlist/${_id}`)
+        axios.delete(`https://blog-server-store.vercel.app/api/v1/wishlist/${_id}`)
         .then(data => {
             if (data.data.deletedCount > 0) {
                 toast.success("Delted Sucessfully")

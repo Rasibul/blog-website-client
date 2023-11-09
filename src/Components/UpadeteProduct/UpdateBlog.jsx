@@ -15,7 +15,7 @@ const UpdateBlog = () => {
         const updateBlog = { title, catageroy, shortDescription, longDescription, photo }
         console.log(updateBlog)
 
-        axios.put(`http://localhost:5000/api/v1/all-blogs/${_id}`, updateBlog)
+        axios.put(`https://blog-server-store.vercel.app/api/v1/all-blogs/${_id}`, updateBlog)
             .then(data => {
                 if (data.data.modifiedCount > 0) {
                     toast.success("Update Blog Sucessfully")

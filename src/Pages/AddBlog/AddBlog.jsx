@@ -17,7 +17,7 @@ const AddBlog = () => {
         const displayName = user.displayName
         const photoURL = user.photoURL
         const addBlog = {title,catageroy,shortDescription,longDescription,photo,email, displayName,photoURL,"date":new Date(Date.now())}
-        axios.post("http://localhost:5000/api/v1/all-blogs",addBlog)
+        axios.post("https://blog-server-store.vercel.app/api/v1/all-blogs",addBlog)
         .then(data =>{
             if(data.data.insertedId){
                 toast.success("Blog Created Succesfuly")

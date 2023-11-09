@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AllBlogcCart = ({ allBlog }) => {
     const { _id, title, photo, shortDescription, catageroy } = allBlog || {}
     const handeToAddCart = (p) => {
-        axios.post("http://localhost:5000/api/v1/wislist", p)
+        axios.post("https://blog-server-store.vercel.app/api/v1/wislist", p)
             .then(data => {
                 if (data.data.insertedId) {
                     toast.success("Add To Wishlist Sucessfully")

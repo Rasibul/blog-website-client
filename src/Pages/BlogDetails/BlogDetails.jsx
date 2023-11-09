@@ -16,7 +16,7 @@ const BlogDetails = () => {
         const displayName = user.displayName
         const photoURL = user.photoURL
         const allComment = { comment, displayName, photoURL }
-        axios.post("http://localhost:5000/api/v1/comment-list", allComment)
+        axios.post("https://blog-server-store.vercel.app/api/v1/comment-list", allComment)
             .then(data => {
                 if (data.data.insertedId) {
                     toast.success("Comment Suceesfully")
@@ -32,7 +32,7 @@ const BlogDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/v1/comment-list')
+                const response = await fetch('https://blog-server-store.vercel.app/api/v1/comment-list')
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
