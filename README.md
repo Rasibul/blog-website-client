@@ -1,6 +1,6 @@
 ### My Project Name: Blog Website
 
-- ** Here are my project feture
+# Here are my project feture
 - Any user read any blog .
 - User create a blog and post this blog.
 - Use can be delete ,update his blog any time
